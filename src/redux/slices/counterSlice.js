@@ -22,12 +22,12 @@ export const counterSlice = createSlice({
             state.value += 10;
         },
 
-        // incrementAmount: (state) => {
-        //     state.value += 10;
-        // }
+        incrementAmount: (state, actions) => {
+            state.value += actions.payload;
+        }
 
     }
 })
 
-export const {increment, decrement} = counterSlice.actions
+export const {increment, decrement, incrementBy5, incrementBy10, incrementAmount} = counterSlice.actions
 export default counterSlice.reducer
